@@ -8,10 +8,10 @@ import json
 import webbrowser
 import datetime
 from tqdm import tqdm
+from secret import GOOGLE_API_KEY
 
 t1 = datetime.datetime.now().timestamp()
 GOOGLE_BASEURL = "https://maps.googleapis.com/maps/api/place/nearbysearch"
-GOOGLE_API_KEY = 'AIzaSyDziVLztXkhFZi62IzmSp-pmM2T8OjLFkA'
 payload={}
 headers = {}
 def open_cache(CACHE_FILENAME):

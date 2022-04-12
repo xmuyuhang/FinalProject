@@ -7,6 +7,7 @@ import requests
 import json
 import webbrowser
 import datetime
+from secret import YELP_API_KEY
 
 
 def open_cache(CACHE_FILENAME):
@@ -47,10 +48,8 @@ def save_cache(cache_dict, CACHE_FILENAME):
 # top 30 cities in the U.S. by population
 list_of_state = ['New York', 'Los Angeles', 'Chicago', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'Houston', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Indianapolis', 'Charlotte', 'San Francisco', 'Seattle', 'Denver', 'Washington, DC', 'Nashville-Davidson', 'Oklahoma City', 'El Paso', 'Boston', 'Portland', 'Las Vegas', 'Detroit', 'Memphis', 'Louisville-Jefferson County', 'Baltimore']
 YELP_BASEURL = "https://api.yelp.com/v3/businesses/search"
-GOOGLE_BASEURL = "https://maps.googleapis.com/maps/api/place/nearbysearch"
 
-YELP_API_KEY = "nXsPtLfBdrzyURvlwFgAnxIGU2QXeHlG1UlAgeWnZLDDPBA0qjYipy2RupYyHnnSxydA_QtFDnAq48fVPe2xOlUbe1IrucLYTmkgpTeIF3JpVORNx65sba9VZ2ZQYnYx"
-GOOGLE_API_KEY = 'AIzaSyDziVLztXkhFZi62IzmSp-pmM2T8OjLFkA'
+
 payload={}
 headers = {}
 
