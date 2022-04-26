@@ -2,7 +2,7 @@
 
 This is a project about searching for restaurants in top thirty cities by population in U.S. Users could choose any city of that and select the rating and price they prefer. Finally, they could see more detail information of one restaurant in the last page and some information of nearby restaurants.
 # Data Structure
-I use tree as the main data structure.
+I use tree as the main data structure(in cache_trees.json).
 
 I organize my data into 30 trees according to different cities. Besides, in each tree, I order the tree according to the level of rating, which means a restaurant with higher level of rating will be put in right child and a restaurant with lower level of rating will be put in left child. If there are two restaurants with the same level of rating, I will compare level of price of them. In this case, a restaurant with higher level of price will be put in right child and a restaurant with lower level of price will be put in left child.
 
@@ -18,6 +18,7 @@ The website for you to get Google Maps API Key: https://developers.google.com/ma
 Once you get API keys, make secret.py in the same folder with your project code and save the API key in secret.py.  The secret.py file should contain this (replace “xxxxxxx” with your API key): 
 
 YELP_API_KEY = xxxxxxx
+
 GOOGLE_API_KEY = xxxxxxx
 
 # Step2: Install Python Packages
