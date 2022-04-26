@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <title>HTML Form Response</title>
+    
+</head>
+<body>
+    <h1 align="center">Here are your results. Enjoy! &#128149;</h1>
+    <p>
+        <button onclick="history.go(-1)">Go Back</button> &#8617;
+    <table>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                margin: auto
+            }
+        </style>
+        <tr>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Pick up or not</th>
+            <th>Website</th>
+        </tr>
+        <tr>
+            <td align="center">{{spec_info['name']}}</td>
+            <td align="center">{{spec_info['rating']}}</td>
+            <td align="center">{{spec_info['price']}}</td>
+            <td align="center">{{spec_info['phone']}}</td>
+            <td align="center">{{spec_info['address'][0]}}</td>
+            <td align="center">{{nb_city}}</td>
+            <td align="center">{{spec_info['delivery or not']}}</td>
+            <td align="center"><a href="{{spec_info['link']}}">{{spec_info['link'][:spec_info['link'].find("?")]}}</a></td>
+        </tr>
+        </tr>
+        <br/><br/>
+    </table>
+    </p>
+    <h2 align="center">There are some restaurants nearby {{spec_info['name']}} below.</h2>
+
+    <table style="width: 750px;border-collapse: collapse;table-layout: fixed;">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                margin: auto
+            }
+        </style>
+        <tr>
+            <th align="center">Name</th>
+            <th align="center">Rating</th>
+            <th align="center">Address</th>
+            <th align="center">Phone</th>
+            <th align="center">Website</th>
+        </tr>
+        {% for item in nearby_info %}
+        <tr>
+            <td style="width: 150px;" align="center">{{item[0]}}</td>
+            <td style="width: 150px;" align="center">{{item[1]}}</td>
+            <td style="width: 150px;" align="center">{{item[2]}}</td>
+            <td style="width: 150px;" align="center">{{item[3]}}</td>
+            <td style="width: 150px; overflow: auto;"><a href="{{item[4]}}">{{item[4]}}</a></td>
+        </tr>
+        {% endfor %}
+        </tr>
+        <br/><br/>
+    </table>
+</body>
+
+
+
+
+</html>

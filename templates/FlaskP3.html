@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <title>HTML Form Response</title>
+    
+</head>
+
+<body>
+    {% if results_or_not == '0' %}
+    <h1 align="center">Nothing satisfies your requests.</h1>
+    <p align="center">Please return the last page and adjust the level of rating or price. Thank you!
+    <center><button onclick="history.go(-1)">Go Back</button> &#8617;
+    </p>
+    {% else %}
+    <h1 align="center">Here are your results!</h1>
+    <p>
+    <button onclick="history.go(-1)">Go Back</button> &#8617;
+    <center><div class="app">
+
+        <div style="display:inline-block;background:#f00;">{{plot_div | safe}}</div>
+        
+        <div style="display:inline-block;background:#0f0;margin-left:10px;">{{plot_div2 | safe}}</div>
+        
+        </div>
+    </center>
+        <form action="/details" method="POST">
+            <p align="center">
+               &#127869;
+               Which restaurant below you'd like to look into?
+               <select name="specify">
+                   {% for item in results %}
+                   <option value={{item[0]}}>{{item[0]}}</option>
+                   {% endfor %}
+                </select>
+                </p>
+                <center><input type="submit" value="Submit!"/>
+        </form>     
+    <table>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                margin: auto
+            }
+        </style>
+        <tr>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Type</th>
+        </tr>
+        {% for item in results %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            {% if item[2] == '4' %}
+            <td>$$$$</td>
+            {% elif item[2] == '3' %}
+            <td>$$$</td>
+            {% elif item[2] == '2' %}
+            <td>$$</td>
+            {% elif item[2] == '1' %}
+            <td>$</td>
+            {% endif %}
+            <td>{{item[3]}}</td>
+        </tr>
+        {% endfor %}
+        </tr>
+        <br/><br/>
+    </table>
+    {% endif %}
+</p>
+</body>
+
+    
+
+    
+   
+    
+   
+</body>
+</html>

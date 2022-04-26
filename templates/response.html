@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <title>HTML Form Response</title>
+    
+</head>
+<body>
+    <h1 align="center">Welcome to {{state}} &#127881;</h1>
+    <p>
+    <button onclick="history.go(-1)">Go Back</button> &#8617;
+    </p>
+</body>
+
+<h2 align="center"> Below are the histograms which describles the distribution of ratings and prices in {{state}}</h2>
+<body>
+    <center><div class="app">
+
+        <div style="display:inline-block;background:#f00;">{{plot_div1 | safe}}</div>
+        
+        <div style="display:inline-block;background:#0f0;margin-left:10px;">{{plot_div2 | safe}}</div>
+        
+        </div>
+    </center>
+    <form action='/results' method='POST'>
+        <p align="center">
+            Rating:
+            <select name="rating">
+                <option value=4.5>4.5 or above</option>
+                <option value=4.0>4.0 or above</option>
+                <option value=3.5>3.5 or above</option>
+                <option value=0>All</option>
+            </select>
+            </p>
+        <p align="center">
+            Price:
+            <select name="price">
+                <option value="4">$$$$</option>
+                <option value="3">$$$ or above</option>
+                <option value="2">$$ or above</option>
+                <option value="1">$ or above</option>
+            </select>
+            </p>
+    
+            <center><input type='submit' value='Search!'/>
+    </form>
+</body>
+
+</html>
