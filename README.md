@@ -23,11 +23,11 @@ GOOGLE_API_KEY = xxxxxxx
 
 # Step2: Install Python Packages
 Please install the Python packages for my project to work first:
-NumPy, Plotly, Flask, Requests, Pandas, tqdm, datetime, collections
+NumPy, Plotly, Flask, Requests, Pandas, tqdm, datetime, collections.
 
 # Step3: Run the final_project.py
-This program was made by Flask app, please run the flask1.py locally:
-python flask1.py
+This program was made by Flask app, please run the final_flask.py locally:
+python final_flask.py
 
 Then open http://127.0.0.1:5000/ in your browser.
 # Step 4: Interact with the program
